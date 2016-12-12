@@ -1,0 +1,64 @@
+\begin{axis}[
+        width=15cm,
+        height=300pt,
+        xlabel={Area},
+        ylabel={Frequencia},
+        ymin=0, ymax=8000,
+        xtick={0, 1, 2, 3, 4, 5, 6},
+        xticklabels={5.00E+07, 1.00E+08, 5.00E+08, 1.00E+09, 5.00E+09},
+        legend pos=north west,
+        ymajorgrids=true,
+        grid style=dashed,
+        scaled y ticks=false,
+        ybar,
+    ]
+
+    \addplot[
+        fill,
+        teal,
+    ]
+    coordinates {
+        (1,1250)
+        (2,596)
+        (3,856)
+        (4,195)
+        (5,48)
+    };
+    \addlegendentry{Periodo A}
+    \addplot[
+        fill,
+        orange,
+    ]
+    coordinates {
+        (1,7361)
+        (2,3773)
+        (3,5010)
+        (4,495)
+        (5,93)
+    };
+    \addlegendentry{Periodo B}
+    \addplot[
+        fill,
+        yellow!80!black,
+    ]
+    coordinates {
+        (1,4816)
+        (2,2213)
+        (3,2896)
+        (4,423)
+        (5,78)
+    };
+    \addlegendentry{Periodo C}
+    \addplot[
+        fill,
+        blue!70!black,
+    ]
+    coordinates {
+        (1,1047)
+        (2,460)
+        (3,549)
+        (4,114)
+        (5,43)
+    };
+    \addlegendentry{Periodo D}
+\end{axis}

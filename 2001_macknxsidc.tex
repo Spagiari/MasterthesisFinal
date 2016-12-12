@@ -1,0 +1,15 @@
+\begin{axis}[
+        width=15cm,
+        height=300pt,
+        no markers,
+        date coordinates in=x,
+        xticklabel=\month-\year,
+        xmin={2001-01-01},
+        xmax={2001-12-31},
+        xticklabel style= {rotate=45,anchor=north east},
+        ylabel= Número de Wolf]
+    \addplot table [x=Data, y=MACK5] {2001-mack5.txt};
+    \addlegendentry{MACK5}
+    \addplot table [x=Data, y=SIDC] {2001-mack5.txt};
+    \addlegendentry{SIDC}
+\end{axis}

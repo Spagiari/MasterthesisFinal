@@ -1,0 +1,15 @@
+\begin{axis}[
+        width=15cm,
+        height=300pt,
+        no markers,
+        date coordinates in=x,
+        xticklabel=\month-\year,
+        xmin={1996-08-01},
+        xmax={2008-01-31},
+        xticklabel style= {rotate=45,anchor=north east},
+        ylabel= Número de Wolf]
+    \addplot table [x=Data, y=MACK5] {ciclo23.txt};
+    \addlegendentry{MACK5}
+    \addplot table [x=Data, y=SIDC] {ciclo23.txt};
+    \addlegendentry{SIDC}
+\end{axis}

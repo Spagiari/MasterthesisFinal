@@ -1,0 +1,19 @@
+\begin{axis}[
+        width=15cm,
+        height=270pt,
+        no markers,
+        date coordinates in=x,
+        xticklabel=\month-\year,
+        xmin={2007-01-01},
+        xmax={2007-12-31},
+        xticklabel style= {rotate=45,anchor=north east},
+        ylabel= Número de Wolf]
+    \addplot table [x=Data, y=MACK] {2007-filtros.txt};
+    \addlegendentry{MACK}
+    \addplot table [x=Data, y=MACK5] {2007-filtros.txt};
+    \addlegendentry{MACK5}
+    \addplot table [x=Data, y=MACK10] {2007-filtros.txt};
+    \addlegendentry{MACK10}
+    \addplot table [x=Data, y=SIDC] {2007-filtros.txt};
+    \addlegendentry{SIDC}
+\end{axis}

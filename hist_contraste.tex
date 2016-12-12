@@ -1,0 +1,72 @@
+\begin{axis}[
+        width=15cm,
+        height=300pt,
+        xlabel={Contraste},
+        ylabel={Frequencia},
+        minor x tick num=5,
+        ymin=0, ymax=8000,
+        xtick={0.40, 0.50, 0.60, 0.70, 0.80, 0.90, 1.00},
+        legend pos=north west,
+        ymajorgrids=true,
+        grid style=dashed,
+        scaled y ticks=false,
+        ybar,
+    ]
+
+    \addplot[
+        fill,
+        teal,
+    ]
+    coordinates {
+        (0.4,9)
+        (0.5,49)
+        (0.6,50)
+        (0.7,166)
+        (0.8,828)
+        (0.9,1416)
+        (1.00,427)
+    };
+    \addlegendentry{Periodo A}
+    \addplot[
+        fill,
+        orange,
+    ]
+    coordinates {
+        (0.4,196)
+        (0.5,453)
+        (0.6,893)
+        (0.7,1622)
+        (0.8,5518)
+        (0.9,6902)
+        (1.00,1148)
+    };
+    \addlegendentry{Periodo B}
+    \addplot[
+        fill,
+        yellow!80!black,
+    ]
+    coordinates {
+        (0.4,128)
+        (0.5,291)
+        (0.6,473)
+        (0.7,829)
+        (0.8,3184)
+        (0.9,4654)
+        (1.00,868)
+    };
+    \addlegendentry{Periodo C}
+    \addplot[
+        fill,
+        blue!70!black,
+    ]
+    coordinates {
+        (0.4,25)
+        (0.5,50)
+        (0.6,66)
+        (0.7,125)
+        (0.8,578)
+        (0.9,1047)
+        (1.00,322)
+    };
+    \addlegendentry{Periodo D}
+\end{axis}

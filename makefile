@@ -1,0 +1,26 @@
+TEX = pdflatex -shell-escape -interaction nonstopmode
+BIB = bibtex
+GS = gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite
+
+PAPER = masterthesis
+BIBFILE = biblproj.bib
+BUNDLE = sunspot.pdf
+
+all: $(PAPER).pdf
+	$(GS) -sOutputFile=$(BUNDLE) $(PAPER).pdf
+
+view:
+	$(BUNDLE)
+	open $(BUNDLE)
+
+spell::
+	ispell *.tex
+
+clean::
+	rm -fv *.aux *.log *.bbl *.blg *.toc *.out *.lot *.lof $(PAPER).pdf $(PAPPER)*.md5 $(PAPPER)*.dpth  $(PAPPER)*.pdf $(BUNDLE)
+
+$(PAPER).pdf: $(PAPER).tex $(BIBFILE)
+	$(TEX) $(PAPER)
+	$(BIB) $(PAPER)
+	$(TEX) $(PAPER)
+	$(TEX) $(PAPER)
