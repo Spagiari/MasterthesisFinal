@@ -179,23 +179,23 @@ Com base nos dados obtidos, verificou-se o comportamento dessas características 
 \end{center}
 \renewcommand{\baselinestretch}{0.6666666}
 Sunspots are cooler regions, therefore darker regions that appear on the surface
-of the Sun in the region known as photosphere. This phenomenon is associated to changes in
+of the Sun known as photosphere. This phenomenon is associated to changes in
 the solar magnetic field and its cycle of activity. Sunspots are the main manifestation of
-the variation of the solar activity, whith the number of spots varying
+the variation of the solar activity, with the number of spots varying
 over the years, increasing and decreasing by a cycle of approximately 11 years.
 Phenomena related to solar activity can interfere in
-terrestrial communications and also changes in global temperature.
+terrestrial communications and also change in global temperature.
 
 Some correlations are known between the physical characteristics of sunspots
 and the magnetic field. In the 90's a non-linear relationship was observed between the field
 and the brightness of the sunspot. More recent work has pointed out a relation
-between the intensity of the magnetic field and the area of the sunspot. The evolution of the characteristics of sunspots over time were also investigated..
+between the intensity of the magnetic field and the area of the sunspot. Here, we analyze the correlation between these characteristics of sunspots and their evolution over time are also investigated.
 
-This work analyzed the physical characteristics of 32,317 sunspots of the solar cycle 23, detected using computer vision techniques.
+This work analyzed the physical characteristics of 32,317 sunspots the solar cycle 23, detected using computer vision techniques.
 Images in visible light and
 magnetograms of the MDI instrument (Michelson Doppler Imager) of the space telescope
 SOHO (Solar and Heliospheric Observatory) were used in the process of detecting
-sunspots and the extraction of them characteristics. The flow of
+sunspots and the extraction of their characteristics. The flow of
 solar irradiance, number of spots, number of sunspot groups, area, temperature, brightness and
 the average magnetic field of sunspots. Based on the sunspot data, the behavior of these characteristics and relationships between them were verified along the
 periods of solar minimum and maximum.
@@ -292,16 +292,16 @@ As manchas solares evoluem e se dissipam nas regiões ativas. Geralmente mais de 
 Nos últimos anos, algumas técnicas de visão computacional foram aplicadas ao problema de detecção automática de manchas solares, obtendo-se resultados satisfatórios. \citecustom{zharkov2005} utilizaram técnicas de processamento de imagens para remover ruídos e detalhes sem interesse e, após o pré-processamento utilizaram o algoritmo de detecção de borda de Sobel para determinar os pontos candidatos a manchas solares. Depois da detecção de pontos candidatos, o método de \citecustom{zharkov2005} utilizou binarização e filtragem morfológica para segmentação das manchas solares obtendo uma alta correlação com os dados do NOAA (National Oceanic and Atmospheric Administration). \citecustom{colak2007} discutiram a classificação automática das manchas solares em tempo real para previsão de atividade solar. Outra abordagem proposta por \citecustom{curto2008}, utilizando imagens do observatório de Ebro, apresentaram uma técnica empregando morfologia matemática na tentativa de detectar todo o perímetro de padrões, às vezes amorfos, das manchas solares.
 
 \FloatBarrier
-\subsubsection{Coordenadas heliográficas}
+\subsection{Coordenadas heliográficas}
 O sistema de coordenadas heliográficas descreve a posição de qualquer ponto da esfera solar utilizando latitude e longitude expressas em graus. Observando imagens do disco solar no contexto de visão computacional um ponto qualquer do disco solar é expresso em coordenadas $x$ e $y$ que podem ser convertidas para coordenadas heliográficas cuja latitude é obtida pela Equação \ref{eq:lat} e a longitude pela Equação \ref{eq:lon}, onde $x$ e $y$ são as coordenadas da imagem e $r$ é o raio solar em pixels \cite{Thompson2002}.
 \begin{mycapequ}
     \begin{equation}
-        l = \arcsin \left(\frac{y}{r}\right)
+        l = arcsen\left(\frac{y}{r}\right)
     \end{equation}
     \caption{} %{Latitude de um ponto}
     \label{eq:lat}
     \begin{equation}
-        b = \arcsin\left(\frac{x}{\sqrt{r^2-y^2}}\right)
+        b = arcsen\left(\frac{x}{\sqrt{r^2-y^2}}\right)
     \end{equation}
     \caption{} %{Longitude de um ponto}
     \label{eq:lon}
@@ -311,7 +311,7 @@ O sistema de coordenadas heliográficas descreve a posição de qualquer ponto da e
 Para a determinação dos grupos de manchas solares pode ser utilizado o critério de distância, pois a característica de proximidade espacial é um atributo físico compartilhado por manchas solares da mesma região ativa. Sendo assim é aceito e comprovado por amostras estatísticas que manchas com até 6 graus heliográficos de distância umas das outras fazem parte do mesmo grupo \cite{curto2008}. A Equação \ref{eq:dis} apresenta um método para se mensurar a distância de dois pontos conhecidos em coordenadas heliográficas, onde $l_1$ e $b_1$ são as coordenadas heliográficas do ponto 1 e $l_2$ e $b_2$ são as coordenadas heliográficas do ponto 2.
 \begin{mycapequ} [!ht]
     \begin{equation}
-        \lambda = \arcsin(sen(l_1) \times \sin(l_2)+\cos(l_1) \times cos(l_2) \times \cos(b_2-b_1))
+        \lambda = arcsen(sen(l_1)\times sen(l_2)+ cos(l_1)\times cos(l_2)\times cos(b_2-b_1))
     \end{equation}
     \caption{} %{Distância entre dois pontos em uma esfera}
     \label{eq:dis}
@@ -764,7 +764,7 @@ Os seguintes parâmetros físicos foram extraídos das manchas solares detectadas, 
 
 Também foram analisadas as relações entre as características das manchas solares extraídas. A seguir são apresentados os gráficos de dispersão entre área e temperatura, área e contraste, campo magnético máximo e temperatura, e campo magnético máximo e área. Estas análises foram feitas para todo o ciclo solar e também para cada período individualmente.
 
-O gráfico da Figura \ref{fig:c23} compara o número de Wolf obtido para cada dia do ciclo solar 23 com os dados publicados pelo centro de pesquisa SIDC. Os dados extraídos pelo \textit{sunspot} na sua versão \textit{MACK5} tiveram um coeficiente de correlação de 95\% em comparação com os dados do SIDC. O número de manchas solares mostrado na Figura \ref{fig:c23} mostra claramente o ciclo de atividade solar com máximo em 2000-2001.
+O gráfico da Figura \ref{fig:c23} compara o número de Wolf obtido para cada dia do ciclo solar 23 com os dados publicados pelo centro de pesquisa SIDC. Os dados extraídos pelo \textit{sunspot} na sua versão \textit{MACK5} tiveram um coeficiente de correlação de 95\% em comparação com os dados do SIDC. O número de manchas solares mostrado na Figura \ref{fig:c23} mostra claramente o ciclo de atividade solar com máximo em 2000-2002.
 
 \begin{table}[!htbp]
     \centering
@@ -804,7 +804,7 @@ O gráfico da Figura \ref{fig:c23} compara o número de Wolf obtido para cada dia 
     \end{center}
 \end{figure}
 
-A evolução temporal dos parâmetros físicos das manchas como área, contraste, campo magnético extremo são mostrados nas Figuras \ref{fig:c23a}, \ref{fig:c23c} e \ref{fig:c23b}, são respectivamente, cruzamentos entre área, contraste e campo magnético extremo. Cada período, no gráfico a seguir, foi destacado em uma cor diferente para melhorar a visualização do comportamento das características de cada um deles. Nota-se que essas características físicas guardam relação com a evolução do ciclo solar, como pode-se notar das Figuras \ref{fig:c23a} - \ref{fig:c23b}, durante períodos de máxima atividade solar, as manchas solares são maiores, mais escuras e com campos magnéticos mais intensos.
+A evolução temporal dos parâmetros físicos das manchas como área, contraste e campo magnético extremo são mostrados nas Figuras \ref{fig:c23a}, \ref{fig:c23c} e \ref{fig:c23b}, respectivamente. Cada período, no gráfico a seguir, foi destacado em uma cor diferente para melhorar a visualização do comportamento das características de cada um deles. Nota-se que essas características físicas guardam relação com a evolução do ciclo solar, como pode-se notar das Figuras \ref{fig:c23a} - \ref{fig:c23b}, durante períodos de máxima atividade solar, as manchas solares são maiores, mais escuras e com campos magnéticos mais intensos.
 
 \begin{figure}[!htbp]
     \begin{center}
@@ -829,7 +829,7 @@ A evolução temporal dos parâmetros físicos das manchas como área, contraste, cam
         \begin{tikzpicture}
             \input ciclo23_bmax.tex
         \end{tikzpicture}
-        \caption{Campos magéticos máximos e mínimos de manchas solares a o longo do ciclo solar 23.}
+        \caption{Campos magéticos máximos e mínimos de manchas solares ao longo do ciclo solar 23.}
         \label{fig:c23b}
     \end{center}
 \end{figure}
@@ -839,7 +839,7 @@ A evolução temporal dos parâmetros físicos das manchas como área, contraste, cam
 Para analisar como os valores de contraste, temperatura, área e campo magnético máximo estão distribuídos, foram gerados histogramas utilizando como base as 32.317 manchas solares detectadas com longitude entre -40\degree e 40\degree.
 Para cada uma das características físicas das manchas foi gerado um histograma para todo o ciclo solar 23 e também um histograma para cada um dos quatro períodos do ciclo solar 23. Os histogramas gerados para os períodos A, B, C e D são para identificar alterações na distribuição das características ao longo do ciclo solar 23.
 
-A Figura \ref{fig:hcontrastegeral} mostra o histograma do contraste das manchas para o ciclo solar 23. O contraste das manchas solares para o ciclo solar 23 apresenta o valor médio de $0.78\pm0.11$. Os histogramas do contraste das manchas solares dos períodos do ciclo podem ser vistos na Figura \ref{fig:hcontraste}. A Tabela \ref{tab:mc} traz a média de contraste das manchas solares para cada período do ciclo solar 23. Comparando a média dos períodos com a média para todo o ciclo 23, nota-se uma pequena variação no valor médio do contraste, sendo as manchas mais escuras no máximo do ciclo solar 23.
+A Figura \ref{fig:hcontrastegeral} mostra o histograma do contraste das manchas para o ciclo solar 23. O contraste das manchas solares para o ciclo solar 23 apresenta o valor médio de $0.78\pm0.11$. Os histogramas do contraste das manchas solares dos períodos do ciclo podem ser vistos na Figura \ref{fig:hcontraste}. A Tabela \ref{tab:mc} traz a média de contraste das manchas solares para cada período do ciclo solar 23. Comparando a média dos períodos com a média para todo o ciclo 23, nota-se uma pequena variação no valor médio do contraste, sendo as manchas mais escuras no máximo do ciclo solar 23 (períodos B e C).
 
 \begin{figure}[!h]
     \begin{center}
@@ -958,7 +958,7 @@ Assim como no histograma do contraste, a distribuição de temperatura das manchas
     \caption{Média da temperatura para os períodos do ciclo solar 23.}
     \label{tab:mt}
     \begin{tabular}{lllll}
-        Período     & Temperatura $K$ &  &  &  \\
+        Período     & Temperatura $(K)$ &  &  &  \\
         A           & $5500\pm160$    &  &  &  \\
         B           & $5400\pm200$    &  &  &  \\
         C           & $5400\pm200$    &  &  &  \\
@@ -1071,7 +1071,7 @@ A Figura \ref{fig:hbmaxabsgeral} mostra o histograma do campo magnético máximo d
     \caption{Média dos máximos das componentes positiva e negativa do campo magnético das manchas para os períodos do ciclo solar 23.}
     \label{tab:mb}
     \begin{tabular}{lllll}
-        Período     & $B_{pos} G$     & $B_{neg} G$      &  &  \\
+        Período     & $B_{pos} (G)$     & $B_{neg} (G)$      &  &  \\
         A           & $1600\pm700$ & $-1500\pm600$ &  &  \\
         B           & $1800\pm600$ & $-1700\pm600$ &  &  \\
         C           & $1700\pm600$ & $-1800\pm600$ &  &  \\
@@ -1084,7 +1084,7 @@ A Figura \ref{fig:hbmaxabsgeral} mostra o histograma do campo magnético máximo d
 \subsubsection{Correlações entre as características físicas das manchas solares}
 A análise da correlação entre as características das manchas foi feita utilizando a amostra mensal de manchas solares. Foram utilizadas 2132 manchas detectadas nos dias 1 e 15 de cada mês que compõem o ciclo solar 23.
 
-O gráfico de correlação da Figura \ref{fig:tempxarea1} entre temperatura e área (em escala logarítmica) mostra que a temperatura da mancha solar tem um relação com a sua área, onde manchas solares maiores são consistentemente mais frias que manchas solares menores. A mesma correlação pode ser verificada no gráfico de dispersão da Figura \ref{fig:areaxint1} entre área e contraste. Isso decorre do fato de que a temperatura é calculada a partir contraste (Equação \ref{eq:temp}). Nota-se novamente a presença de uma segunda componente de manchas mais frias ($T<5300 K$) e escuras (contraste $0.7I_c$). Esta componente desvia o ajuste linear para valores menores.
+O gráfico de correlação da Figura \ref{fig:tempxarea1} entre temperatura e área (em escala logarítmica) mostra que a temperatura da mancha solar tem um relação com a sua área, onde manchas solares maiores são consistentemente mais frias que manchas solares menores. A mesma correlação pode ser verificada no gráfico de dispersão da Figura \ref{fig:areaxint1} entre área e contraste. Isso decorre do fato de que a temperatura é calculada a partir contraste (Equação \ref{eq:temp}). Nota-se novamente a presença de uma segunda componente de manchas mais frias ($T<5300 K$) e escuras (contraste $<0.7$). Esta componente desvia o ajuste linear aumentando o coeficiente angular da reta, em módulo.
 \begin{figure}[!h]
     \begin{center}
         \begin{tikzpicture}[node distance=6cm, auto]
@@ -1104,9 +1104,7 @@ O gráfico de correlação da Figura \ref{fig:tempxarea1} entre temperatura e área 
     \end{center}
 \end{figure}
 
-O gráfico de correlação da Figura \ref{fig:bxtemp} entre campo magnético extremo e temperatura vai ao encontro dos resultados de \citecustom{dicke1970} e \citecustom{Kopp1992} evidenciando uma relação não linear entre campo magnético e temperatura. A linha de ajuste em vermelho é baseada na Equação \ref{eq:dicke} \cite{dicke1970}. Uma forma generica da Equação \ref{eq:dicke} é $\frac{T}{T_e}=aB^2 + c$, foi ajustada aos dados extraídos por esse trabalho resultando nos valores $a=-1.08\times10^{-8}$ e $c=0.98$ (linha verde).
-
-Nota-se que as manchas solares ajustadas por \citecustom{dicke1970} eram mais frias e com campos magnéticos menos intensos do que as detectadas no ciclo solar 23.
+O gráfico de correlação da Figura \ref{fig:bxtemp} entre campo magnético extremo e temperatura vai ao encontro dos resultados de \citecustom{dicke1970} e \citecustom{Kopp1992} evidenciando uma relação não linear entre campo magnético e temperatura. A linha de ajuste em vermelho é baseada na Equação \ref{eq:dicke} \cite{dicke1970}.
 \begin{mycapequ} [!ht]
     \begin{equation}
         \mathit{\frac{T}{Te}= -3.21\times 10^{-8}B^{2} + 0.95}
@@ -1114,6 +1112,9 @@ Nota-se que as manchas solares ajustadas por \citecustom{dicke1970} eram mais fr
     \caption{}%{Número de Wolf}
     \label{eq:dicke}
 \end{mycapequ}
+
+Uma forma genérica da Equação \ref{eq:dicke} é $\frac{T}{T_e}=aB^2 + c$, foi ajustada aos dados extraídos por esse trabalho resultando nos valores $a=-1.08\times10^{-8}$ e $c=0.98$ (linha verde).
+Nota-se que as manchas solares ajustadas por \citecustom{dicke1970} eram mais frias e com campos magnéticos menos intensos do que as detectadas no ciclo solar 23.
 \begin{figure}[!h]
     \begin{center}
         \begin{tikzpicture}[node distance=6cm, auto]
@@ -1137,7 +1138,7 @@ O gráfico de correlação entre área e campo magnético extremo pode ser observado 
 \end{figure}
 \FloatBarrier
 
-A Figura \ref{fig:areaxcontraste} compara os gráficos de contraste pela área das manchas solares para cada período do ciclo solar 23. As linhas de ajuste em laranja para os quatro períodos A, B, C e D apresentam coeficientes muito semelhantes. A Tabela \ref{tab:ac} mostra o ajuste equação logarítmica $y=a\times\log{x}+b$ ajustada para cada um dos quatro períodos. Comparando os parâmetros das equações de ajustes de cada período do ciclo solar 23, nota-se uma pequena variação entre eles. Os períodos B e C de máxima atividade possuem uma correlação mais íngreme do que os períodos A e D. O mesmo comportamento é observado na Figura \ref{fig:areaxtemperatura} e na Tabela \ref{tab:at} que comparam a correlação entre a temperatura e área das manchas solares para cada período do ciclo solar 23. Entretanto a discrepância entre o coeficiente linear dos períodos A e D comparado com os períodos de máxima do ciclo (B e C) muito provavelmente deve-se à existência da componente de manchas mais frias mencionada anteriormente.
+A Figura \ref{fig:areaxcontraste} compara os gráficos de contraste pela área das manchas solares para cada período do ciclo solar 23. As linhas de ajuste em laranja para os quatro períodos A, B, C e D apresentam coeficientes muito semelhantes. A Tabela \ref{tab:ac} mostra o ajuste equação logarítmica $y=a\times\log{x}+b$ ajustada para cada um dos quatro períodos. Comparando os parâmetros das equações de ajustes de cada período do ciclo solar 23, nota-se uma pequena variação entre eles. Os períodos B e C de máxima atividade possuem uma correlação mais íngreme do que os períodos A e D. O mesmo comportamento é observado na Figura \ref{fig:areaxtemperatura} e na Tabela \ref{tab:at} que comparam a correlação entre a temperatura e área das manchas solares para cada período do ciclo solar 23. Entretanto a discrepância entre o coeficiente linear dos períodos A e D comparado com os períodos de máxima atividade do ciclo (B e C) muito provavelmente deve-se à existência da componente de manchas mais frias mencionada anteriormente.
 %1p
 \begin{figure}[h]
     \centering
@@ -1178,7 +1179,7 @@ A Figura \ref{fig:areaxcontraste} compara os gráficos de contraste pela área das
 \end{figure}
 \begin{table}[h]
     \centering
-    \caption{Comparação entres as equações de ajuste da correlação com o contraste e log da área das manchas solares.}
+    \caption{Comparação entres as equações de ajuste da correlação com o contraste e log da área ($x$) das manchas solares.}
     \label{tab:ac}
     \begin{tabular}{lllll}
         Período & Equação de Ajuste            &  &  &  \\
@@ -1229,7 +1230,7 @@ A Figura \ref{fig:areaxcontraste} compara os gráficos de contraste pela área das
 \end{figure}
 \begin{table}[h]
     \centering
-    \caption{Comparação entre as equações de ajuste da correlação com a temperatura e o log da área das manchas solares.}
+    \caption{Comparação entre as equações de ajuste da correlação com a temperatura e o log da área ($x$) das manchas solares.}
     \label{tab:at}
     \begin{tabular}{lllll}
         Período & Equação de Ajuste            &  &  &  \\
@@ -1241,7 +1242,7 @@ A Figura \ref{fig:areaxcontraste} compara os gráficos de contraste pela área das
 \end{table}
 \FloatBarrier
 
-A Figura \ref{fig:bxcontraste_c} apresenta as correlações do campo magnético extremo com o contraste das manchas solares de cada período do ciclo solar 23. As linhas de ajuste quadratico em laranja para os quatro períodos A, B, C e D apresentam coeficientes muito semelhantes. A Tabela \ref{tab:bc} mostra a equação de segundo grau $ax^2+bx+c$ ajustada para cada um dos quatro períodos. Comparando os parâmetros das equações de ajustes de cada período do ciclo solar 23, nota-se uma variação muito pequena entre eles. O parâmetro $c$ da equação de segundo grau ajustada para os períodos do ciclo solar 23, apresentou um valor ligeiramente maior no período D, esse comportamento pode ser um indício de que o período D apresentou manchas solares com menor contraste ou, em outras palavras, mais quente do que os outros períodos. O mesmo comportamento é observado na Figura \ref{fig:bxtemp_c} e na Tabela \ref{tab:bt} que comparam a correlação entre temperatura e área das manchas solares para cada período do ciclo solar 23.
+A Figura \ref{fig:bxcontraste_c} apresenta as correlações do campo magnético extremo com o contraste das manchas solares de cada período do ciclo solar 23. As linhas de ajuste quadrático em laranja para os quatro períodos A, B, C e D apresentam coeficientes muito semelhantes. A Tabela \ref{tab:bc} mostra a equação de segundo grau $ax^2+bx+c$ ajustada para cada um dos quatro períodos. Comparando os parâmetros das equações de ajustes de cada período do ciclo solar 23, nota-se uma variação muito pequena entre eles. O parâmetro $c$ da equação de segundo grau ajustada para os períodos do ciclo solar 23, apresentou um valor ligeiramente maior no período D, esse comportamento pode ser um indício de que o período D apresentou manchas solares com menor contraste ou, em outras palavras, mais quente do que os outros períodos. O mesmo comportamento é observado na Figura \ref{fig:bxtemp_c} e na Tabela \ref{tab:bt} que comparam a correlação entre temperatura e área das manchas solares para cada período do ciclo solar 23.
 %3p
 \begin{figure}[h]
     \centering
@@ -1282,7 +1283,7 @@ A Figura \ref{fig:bxcontraste_c} apresenta as correlações do campo magnético ext
 \end{figure}
 \begin{table}[h]
     \centering
-    \caption{Comparação entre as equações de ajuste da correlação com o contraste e o campo magnético extremo das manchas solares.}
+    \caption{Comparação entre as equações de ajuste da correlação com o contraste e o campo magnético extremo ($x$) das manchas solares.}
     \label{tab:bc}
     \begin{tabular}{lllll}
         Período & Equação de Ajuste            &  &  &  \\
@@ -1328,12 +1329,12 @@ A Figura \ref{fig:bxcontraste_c} apresenta as correlações do campo magnético ext
         \caption{Período D}
         \label{fig:B}
     \end{subfigure}
-        \caption{Gráfico de dispersão do campo magnético máximo e temperatura das manchas solares.}
+        \caption{Gráfico da temperatura em função do campo magnético extremo das manchas solares.}
         \label{fig:bxtemp_c}
 \end{figure}
 \begin{table}[h]
     \centering
-    \caption{Comparação entre as equações de ajuste da correlação com a temperatura e o campo magnético extremo das manchas solares.}
+    \caption{Comparação entre as equações de ajuste da correlação com a temperatura e o campo magnético extremo ($x$)das manchas solares.}
     \label{tab:bt}
     \begin{tabular}{lllll}
         Período & Equação de Ajuste            &  &  &  \\
@@ -1381,18 +1382,18 @@ A Figura \ref{fig:bxarea_c} apresenta os gráficos do log da área em função do ca
         \caption{Período D}
         \label{fig:B}
     \end{subfigure}
-        \caption{Gráfico de dispersão do campo magnético máximo e a área das manchas solares.}
+        \caption{Gráfico de dispersão da área em função do campo magnético extremo das manchas solares.}
         \label{fig:bxarea_c}
 \end{figure}
 
-Comparando os parâmetros das equações de ajustes de cada período do ciclo solar 23 nota-se uma dimunuição do parâmetro $a$ com o decorrer do ciclo solar 23 enquanto o parâmetro $b$ é ligeiramente menor nos períodos de máxima atividade solar (B e C).
+Comparando os parâmetros das equações de ajustes de cada período do ciclo solar 23 nota-se uma diminuição do parâmetro $a$ com o decorrer do ciclo solar 23 enquanto o parâmetro $b$ é ligeiramente menor nos períodos de máxima atividade solar (B e C).
 
 \newpage
 % Please add the following required packages to your document preamble:
 % \usepackage{multirow}
 \begin{table}[h]
     \centering
-    \caption{Comparação entre as equações de ajuste da correlação com o log da área e o campo magnético extremo das manchas solares.}
+    \caption{Comparação entre as equações de ajuste da correlação com o log da área e o campo magnético extremo ($x$) das manchas solares.}
     \label{tab:ba}
     \begin{tabular}{lllll}
         \multicolumn{1}{c}{\multirow{2}{*}{Período}} & \multicolumn{2}{c}{Equação de Ajuste}                                                      &  &  \\
@@ -1408,21 +1409,21 @@ Comparando os parâmetros das equações de ajustes de cada período do ciclo solar 
 \section{CONCLUSÕES}
 As manchas solares são regiões mais frias na fotosfera solar que evoluem até se dissiparem. A observação contínua das manchas solares revelou um comportamento cíclico da atividade solar, oscilando entre períodos de baixa atividade e períodos de alta atividade. As manchas solares são estudadas e catalogadas desde o monitoramento do fenômeno com telescópios a partir de 1610. O estudo do comportamento de suas características tem sido importante para entender outros fenômenos relacionados à atividade solar e ao dínamo solar.
 
-Em 1995, a NASA colocou em órbita o satélite SOHO, com a missão de observar o Sol com diferentes instrumentos sem a interferência da atmosfera terrestre, fornecendo, assim, imagens mais detalhadas e precisas da fotosfera solar. Este trabalho utilizou imagens do projeto SOHO disponíveis no arquivo de imagens do projeto durante o ciclo 23.
+Em 1995, a NASA colocou em órbita o satélite SOHO, com a missão de observar o Sol com diferentes instrumentos sem a interferência da atmosfera terrestre, fornecendo, assim, imagens mais detalhadas e precisas da fotosfera solar. Este trabalho utilizou imagens do satélite SOHO disponíveis no arquivo de imagens do projeto durante o ciclo 23.
 
-O objetivo deste trabalho foi detectar manchas solares e extrair suas características automaticamente ao longo de todo o ciclo solar 23. Também analisamos dos dados obtidos para verificar o comportamento das características físicas das manchas durante o ciclo solar 23 e verificar a existência de correlações entre estas.
+O objetivo deste trabalho foi detectar manchas solares e extrair suas características automaticamente ao longo de todo o ciclo solar 23. Também analisamos os dados obtidos para verificar o comportamento das características físicas das manchas durante o ciclo solar 23 e determinar a existência de correlações entre estas.
 
 Para detecção das manchas solares foi utilizada a morfologia matemática, uma versátil técnica de visão computacional usada tanto para filtragem de ruído quanto para realce de áreas de interesse em imagens. O algoritmo utilizado neste trabalho foi inspirado no algoritmo desenvolvido por \citecustom{curto2008} para detecção de manchas solares em imagens produzidas pelo observatório Ebro.
 
 Foi desenvolvido um programa de nome \textit{sunspot} que implementa os algoritmos e a metodologia descritos neste trabalho. O \textit{sunspot} processou 6.870 imagens do disco solar completo, com data de observação de julho de 1997 até janeiro de 2008, que compreende o ciclo solar 23, e detectou 32.317 manchas solares, com longitude entre -40\degree e 40\degree. O \textit{sunspot} calculou o principal indicador de atividade solar, o número de Wolf. A série diária do número de Wolf gerada foi comparada com os dados do centro de pesquisa SIDC, como pode ser observado na Figura \ref{fig:c23} e apresentou uma correlação de 95\%. Esse resultado reafirma os resultados de \citeonline{zharkov2005}, \citecustom{curto2008} e \citecustom{spagiari2012} que as manchas solares podem ser detectadas automaticamente utilizando visão computacional.
 
-Com base nas características físicas extraídas das manchas solares detectadas, verificou-se uma correlação quadratica entre a temperatura e campo magnético das manchas solares. Esta correlação foi encontrada também por \citeonline{Kopp1992}, anteriormente \citeonline{dicke1970} descreveu essa correlação não linear com a temperatura da mancha solar em função do quadrado do seu campo magnético, como pode ser visto na Equação \ref{eq:dicke}. Ajustando a equação $aB^2 + c$ aos dados extraídos por este trabalho, chegou-se a parâmetros $a$ e $c$ próximos aos calculados por \citeonline{dicke1970}, como pode ser visto na Figura \ref{fig:bxtemp}, a linha vermelha é a equação de ajuste com os parâmetros calculados por \citeonline{dicke1970}, e a linha verde é a equação de ajuste com os parâmetros calculados utilizando os dados gerados por este trabalho.
+Com base nas características físicas extraídas das manchas solares detectadas, verificou-se uma correlação quadrática entre a temperatura e campo magnético das manchas solares. Esta correlação foi encontrada também por \citeonline{Kopp1992}, anteriormente \citeonline{dicke1970} descreveu essa correlação não linear com a temperatura da mancha solar em função do quadrado do seu campo magnético, como pode ser visto na Equação \ref{eq:dicke}. O ajuste da equação $aB^2 + c$ aos dados extraídos por este trabalho, resultou em parâmetros $a$ e $c$ próximos aos calculados por \citeonline{dicke1970}, como pode ser visto na Figura \ref{fig:bxtemp}, a linha vermelha é a equação de ajuste com os parâmetros calculados por \citeonline{dicke1970}, e a linha verde é a equação de ajuste com os parâmetros calculados utilizando os dados gerados por este trabalho.
 
-Foram encontradas, também, correlações não lineares entre área e campo magnético extremo, assim como, entre temperatura e área. Essas correlações podem ser verificadas, respectivamente, nas Figuras \ref{fig:bxarea} e \ref{fig:tempxarea1}.
+Foram encontradas, também, correlações lineares entre o logaritmo da área e campo magnético extremo, assim como, entre temperatura e log da área. Essas correlações podem ser verificadas, respectivamente, nas Figuras \ref{fig:bxarea} e \ref{fig:tempxarea1}.
 
-Verificou-se, também, se as correlações encontradas com base no conjunto de dados completo do ciclo solar 23 foram mantidas ou se sofreram alterações em diferentes períodos do ciclo solar. Para tanto, o ciclo solar 23 foi dividido em quatro partes e cada parte representando aproximadamente um quarto do ciclo solar. Todas as correlações encontradas no conjunto de dados completo do ciclo solar 23 se mantiveram para os quatro subperíodos definidos e, como também, apresentaram comportamento padrão semelhante com variações pequenas nas correlações entre as características.
+Verificou-se, também, se as correlações encontradas com base no conjunto de dados completo do ciclo solar 23 foram mantidas ou se sofreram alterações em diferentes períodos do ciclo solar. Para tanto, o ciclo solar 23 foi dividido em quatro partes e cada período representando aproximadamente um quarto do ciclo solar. Todas as correlações encontradas no conjunto de dados completo do ciclo solar 23 se mantiveram para os quatro subperíodos definidos com variações pequenas nas correlações entre as características.
 
-Quanto a evolução temporal dos parâmetros físicos das manchas solares, notamos que durante períodos de máxima atividade, as manchas são maiores, mais frias e com campo magnético mais intenso que no inicio ou final do ciclo 23.
+Quanto à evolução temporal dos parâmetros físicos das manchas solares, notamos que durante períodos de máxima atividade, as manchas são maiores, mais frias e com campo magnético mais intenso que no início ou final do ciclo 23.
 
 \newpage
 \def\refname{REFERÊNCIAS BIBLIOGRÁFICAS}
