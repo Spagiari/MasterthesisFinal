@@ -1,8 +1,8 @@
 \begin{axis}[
         width=15cm,
         height=300pt,
-        xlabel={Campo magnético máximo $G$},
-        ylabel={Temperatura $^{\circ}C$},
+        xlabel={Campo magnético extremo $(G)$},
+        ylabel={Temperatura $(K)$},
         minor x tick num=5,
         ymin=4500, ymax=6200,
         xticklabel style={rotate=90},
@@ -2153,8 +2153,8 @@
         (1851.53295804,5349.97)
     };
     \addlegendentry{Manchas solares}
-    \addplot[dash pattern=on 2pt off 1pt, color=orange, smooth, samples=1000, domain=-4000:4000] plot(\x,{-7.0E-5*\x*\x + 0.0004*\x + 5672.2});
-    \addlegendentry{$-7 \times 10^{-5} \times x^2 + 4 \times 10 ^{-4} \times x + 5672.2$}
+    %\addplot[dash pattern=on 2pt off 1pt, color=orange, smooth, samples=1000, domain=-4000:4000] plot(\x,{-7.0E-5*\x*\x + 0.0004*\x + 5672.2});
+    %\addlegendentry{$-7 \times 10^{-5} \times x^2 + 4 \times 10 ^{-4} \times x + 5672.2$}
     \addplot[dash pattern=on 2pt off 1pt, color=red!80!white, smooth, samples=1000, domain=-4000:4000] plot(\x,{(-3.1E-8*\x*\x + 0.95) * 5780});
     \addlegendentry{$(-3.21\times 10^{-8}B^{2} + 0.95) * 5780$}
     \addplot[dash pattern=on 2pt off 1pt, color=green!60!black, smooth, samples=1000, domain=-4000:4000] plot(\x,{(-1.08E-8*\x*\x + 0.98) * 5780});
