@@ -1,10 +1,10 @@
     % Place nodes
     \node [block] (init) {Início};
-    \node [block, right of=init] (re_cen) {Ler posição do centro do sol};
-    \node [block, below of=init] (re_rad) {Ler raio do sol};
-    \node [block, right of=re_rad] (bl_dec) {Detectar as manchas (detecção de blob)};
+    \node [block, right of=init] (re_cen) {Ler posição do centro do Sol};
+    \node [block, below of=init] (re_rad) {Ler raio do Sol};
+    \node [block, right of=re_rad] (bl_dec) {Detectar as manchas (detecção de \textit{blob})};
     \node [block, below of=bl_dec] (bl_fil) {Elimina manchas com menos de 5 pixels};
-    \node [block, below of=re_rad] (ch_cal) {Calcular coordenadas heliograficas das manchas detectadas};
+    \node [block, below of=re_rad] (ch_cal) {Calcular coordenadas heliográficas das manchas detectadas};
     \node [block, below of=bl_fil] (gr_dec) {Calcular distância entre as manchas solares};
     \node [block, below of=ch_cal] (gr_de2) {Agrupar Manchas};
     \node [block, below of=gr_de2] (fim) {fim};

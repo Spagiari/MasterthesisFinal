@@ -1,14 +1,14 @@
     % Place nodes
     \node [block] (init) {Início};
-    \node [block, below of=init] (readimages) {ler imagens};
-    \node [block, right of=readimages] (spotdetect) {detectar manchas solares};
-    \node [block, right of=spotdetect] (groupdetect) {detectar grupos de manchas solares};
-    \node [block, right of=groupdetect] (avgintensity) {intensidade média do centro do Sol};
+    \node [block, below of=init] (readimages) {Ler imagens};
+    \node [block, right of=readimages] (spotdetect) {Detectar manchas solares};
+    \node [block, right of=spotdetect] (groupdetect) {Detectar grupos de manchas solares};
+    \node [block, right of=groupdetect] (avgintensity) {Dntensidade média do centro do Sol};
     \node [block, below of=avgintensity] (spotsarea) {Área das manchas detectadas};
     \node [block, left of=spotsarea] (temp) {Temperatura das manchas solares};
-    \node [block, left of=temp] (magnetogram) {campo magnético das manchas detectadas};
-    \node [decision, below of=magnetogram] (decide) {existem mais imagens?};
-    \node [block, below of=decide, node distance=3.5cm] (fim) {fim};
+    \node [block, left of=temp] (magnetogram) {Campo magnético das manchas detectadas};
+    \node [decision, below of=magnetogram] (decide) {Existem mais imagens?};
+    \node [block, below of=decide, node distance=3.5cm] (fim) {Fim};
     % Draw edges
     \path [line] (init) -- (readimages);
     \path [line] (readimages) -- (spotdetect);

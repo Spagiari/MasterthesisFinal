@@ -8,7 +8,7 @@
     \node [block, below of=ts_ini] (im_bin) {Binarizar imagem ponto de corte igual a BT};
     \node [decision, below of=im_bin, node distance=5.5cm] (bl_chk) {Novos pixels pretos $>$ MA ?};
     \node [block, right of= im_bin] (ts_inc) {BT = BT + 1};
-    \node [block, below of=at_blk] (fim) {fim};
+    \node [block, below of=at_blk] (fim) {Fim};
     \node [block, below of=fim] (mm_opn) {Abertura Morfológica};
     \node [decision, below of=mm_opn, node distance=4.5cm] (wh_chk) {Aumentou número de pixels brancos?};
     % Draw edges
