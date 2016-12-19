@@ -17,6 +17,7 @@
 \usepackage{amssymb}
 \usepackage{subcaption}
 \usepackage{amsmath}
+\usepackage[final]{pdfpages}
 
 \pgfplotsset{width=15cm,compat=1.12}
 
@@ -60,7 +61,7 @@ minimum height=2em]
     }\\
 \strut}
 \vskip 2.0cm
-%\textbf{\normalsize Orientador: Pedro Paulo Balbi de Oliveira}\\
+
 \vskip 5.0cm
 \begin{center}
     São Paulo\\
@@ -99,11 +100,12 @@ minimum height=2em]
 \end{center}
 
 % FICHA CATALOGRÁFICA
-\newpage
-\vspace*{7cm}
-\begin{center}
-    %\includegraphics[scale=0.6]{img/ficha.eps}
-\end{center}
+%\newpage
+%\vspace*{7cm}
+%\begin{center}
+%    \includegraphics[scale=0.6]{img/ficha.pdf}
+%\end{center}
+\includepdf[pages=-, offset=0 0]{img/ficha.pdf}
 
 % DEDICATÓRIA
 \newpage
@@ -162,11 +164,10 @@ Trabalhos mais recentes apontaram uma relação entre a intensidade do campo magné
 
 O presente trabalho tem como objetivo analisar as características físicas das manchas solares do ciclo solar 23.
 Para o processo de detecção e de extração das manchas solares, bem como para a análise de suas características, serão empregadas técnicas de visão computacional, por meio das imagens em luz visível e do magnetograma do instrumento MDI (Michelson Doppler Imager) do telescópio espacial SOHO (Solar and Heliospheric Observatory).
-As imagens em luz visível e o magnetograma do instrumento MDI (\textit{Michelson Doppler Imager}) do telescópio espacial SOHO (\textit{Solar and Heliospheric Observatory})
 Também serão análisados o fluxo de irradiância solar, número de manchas, quantidade de grupos, área, temperatura, brilho e campo magnético médio das manchas solares.
 Com base nos dados obtidos, verificou-se o comportamento dessas características e as relações entre estas ao longo dos períodos de mínimo e de máximo solar.
 
-Foram detectadas e analisadas 32.317 manchas solares, com longitude entre -40\degree e 40\degree, ao longo de todo o ciclo solar. A série diária do número de Wolf foi comparada com os dados do centro de pesquisa SIDC, e apresentou uma correlação de 95\%. Além disso foram encontradas também, correlações não lineares entre área e campo magnético extremo, assim como entre temperatura e área, e finalmente entre temperatura e campo magnético. Verificou-se também que estas correlações apresentaram variações pequenas ao logo do ciclo solar 23.
+Foram detectadas e analisadas 32.317 manchas solares, com longitude entre -40\degree e 40\degree, ao longo de todo o ciclo solar. A série diária do número de Wolf foi comparada com os dados do centro de pesquisa SIDC, e apresentou uma correlação de 95\%. Além disso foram encontradas também, correlações não lineares entre área e campo magnético extremo, assim como entre temperatura e área, e finalmente entre temperatura e campo magnético. Verificou-se também que estas correlações apresentaram variações pequenas ao logo do ciclo solar 23, e que as manchas solares maiores, mais frias e com campos magnéticos mais intensos ocorrem mais frequentemente durante períodos de máxima atividade.
 \\[0.5cm]
 \begin{flushleft}
     {\bf Palavras-chave:} {\it manchas solares, ciclo solar 23, processamento de imagem.}
@@ -206,7 +207,7 @@ periods of solar minimum and maximum.
 We detected and analyzed 32,317 sunspots, with longitude between -40\degree and 40\degree, throughout the entire solar cycle.
 The daily Wolf number series was compared with data from the SIDC research center, and showed a 95\% correlation.
 In addition, nonlinear correlations were found regarding area and extreme magnetic field, as well as regarding temperature and area, and finally regarding temperature and magnetic field.
-It was also found that these correlations presented small variations over the time of the solar cycle 23.
+It was also found that these correlations presented small variations over the time of the solar cycle 23, and that sunspots larger, colder and with stronger magnetic fields occur more frequently during periods of maximum activity.
 \\[0.5cm]
 \begin{flushleft}
     {\bf Keywords:} {\it sunspots, solar cycle 23, image processing.}
@@ -828,7 +829,7 @@ O gráfico da Figura \ref{fig:c23} compara o número de Wolf obtido para cada dia 
     \end{center}
 \end{figure}
 
-A evolução temporal dos parâmetros físicos das manchas como área, contraste e campo magnético extremo são mostrados nas Figuras \ref{fig:c23a}, \ref{fig:c23c} e \ref{fig:c23b}, respectivamente. Cada período, no gráfico a seguir, foi destacado em uma cor diferente para melhorar a visualização do comportamento das características de cada um deles. Nota-se que essas características físicas guardam relação com a evolução do ciclo solar, como pode-se notar das Figuras \ref{fig:c23a} - \ref{fig:c23b}, durante períodos de máxima atividade solar, as manchas solares são maiores, mais escuras e com campos magnéticos mais intensos.
+A evolução temporal dos parâmetros físicos das manchas como área, contraste e campo magnético extremo são mostrados nas Figuras \ref{fig:c23a}, \ref{fig:c23c} e \ref{fig:c23b}, respectivamente. Cada período, no gráfico a seguir, foi destacado em uma cor diferente para melhorar a visualização do comportamento das características de cada um deles. Nota-se que essas características físicas guardam relação com a evolução do ciclo solar, como pode-se notar das Figuras \ref{fig:c23a} - \ref{fig:c23b}, durante os períodos, B e C, as manchas solares maiores, mais frias e com campos magnéticos mais intensos ocorrem com maior frequência.
 
 \begin{figure}[!htbp]
     \begin{center}
@@ -1448,7 +1449,6 @@ Foram encontradas, também, correlações lineares entre o logaritmo da área e camp
 Verificou-se, também, se as correlações encontradas com base no conjunto de dados completo do ciclo solar 23 foram mantidas ou se sofreram alterações em diferentes períodos do ciclo solar. Para tanto, o ciclo solar 23 foi dividido em quatro partes e cada período representando aproximadamente um quarto do ciclo solar. Todas as correlações encontradas no conjunto de dados completo do ciclo solar 23 se mantiveram para os quatro subperíodos definidos com variações pequenas nas correlações entre as características.
 
 Quanto à evolução temporal dos parâmetros físicos das manchas solares, notamos que durante períodos de máxima atividade, as manchas são maiores, mais frias e com campo magnético mais intenso que no início ou final do ciclo 23.
-
 \newpage
 \def\refname{REFERÊNCIAS BIBLIOGRÁFICAS}
 \bibliography{biblproj}
