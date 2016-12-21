@@ -4,12 +4,12 @@
         no markers,
         date coordinates in=x,
         xticklabel=\month-\year,
-        xmin={2001-01-01},
-        xmax={2001-12-31},
+        xmin={1996-08-01},
+        xmax={2008-01-31},
         xticklabel style= {rotate=45,anchor=north east},
         ylabel= Número de Wolf]
-    \addplot table [x=Data, y=MACK5] {2001-mack5.txt};
+    \addplot table [x=Data, y=MACK5] {data/ciclo23.txt};
     \addlegendentry{MACK5}
-    \addplot table [x=Data, y=SIDC] {2001-mack5.txt};
+    \addplot table [x=Data, y=SIDC] {data/ciclo23.txt};
     \addlegendentry{SIDC}
 \end{axis}

@@ -21,12 +21,14 @@
 
 \pgfplotsset{width=15cm,compat=1.12}
 
-\usepgfplotslibrary{external}
-\tikzexternalize
-\usepgfplotslibrary{dateplot}
-
 \usetikzlibrary{shapes,arrows}
 \usetikzlibrary{datavisualization}
+
+\usepgfplotslibrary{external}
+\usetikzlibrary{external}
+\tikzsetexternalprefix{tikz/}
+\tikzexternalize[shell escape=-enable-write18,optimize command away=\includepdf]
+\usepgfplotslibrary{dateplot}
 
 % Define block styles
 \tikzstyle{decision} = [diamond, draw, fill=blue!20,
@@ -262,7 +264,7 @@ A observação contínua das manchas solares comprovou que o Sol possui rotação dif
 
 \begin{figure}[h]
     \begin{center}
-        \includegraphics[width=0.9\textwidth]{sunspot.png}
+        \includegraphics[width=0.9\textwidth]{img/sunspot.png}
         \caption{Imagem de regiões ativas no disco solar.}
         \label{fig:sunspot}
     \end{center}
@@ -270,7 +272,7 @@ A observação contínua das manchas solares comprovou que o Sol possui rotação dif
 
 \begin{figure}[h]
     \begin{center}
-        \includegraphics[width=0.9\textwidth]{sc.png}
+        \includegraphics[width=0.9\textwidth]{img/sc.png}
         \caption{Série histórica diária da média da área das manchas solares no hemisfério visível do Sol \cite{Hathaway2015}.}
         \label{fig:sc}
     \end{center}
@@ -362,7 +364,7 @@ Os pixels de interesse possuem valores próximos a 255 em escala de níveis de cin
 
 \begin{figure}[h]
     \begin{center}
-        \includegraphics[width=5cm, height=5cm]{blobz.png}
+        \includegraphics[width=5cm, height=5cm]{img/blobz.png}
         \caption{Exemplo de imagem, com alguns \textit{blobs}, gerada pelo algoritmo de detecção de manchas solares.}
         \label{fig:blobz}
     \end{center}
@@ -419,7 +421,7 @@ A Equação \ref{eq:bin}, representa a imagem binárizada ($g(x,y)$), onde $f(x,y)$
 
     \begin{figure}[h]
         \begin{center}
-            \includegraphics[width=12cm, height=12cm]{ee.png}
+            \includegraphics[width=12cm, height=12cm]{img/ee.png}
             \caption{Acima, exemplos de elementos estruturantes e, abaixo, representação desses elementos estruturantes em matrizes \cite{gonzalez2010}.}
             \label{fig:ee}
         \end{center}
@@ -442,7 +444,7 @@ A Equação \ref{eq:bin}, representa a imagem binárizada ($g(x,y)$), onde $f(x,y)$
 
     \begin{figure}[h]
         \begin{center}
-            \includegraphics[width=8cm, height=8cm]{erosao.png}
+            \includegraphics[width=8cm, height=8cm]{img/erosao.png}
             \caption{Exemplo de erosão. (a) Imagem binária de $486 \times 486$ pixels de uma conexão \textit{wire-bond}; (b), (c) e (d) Imagens erudidas por elemento estruturante quadrado de tamanhos $11 \times 11$, $15 \times 15$ e $45 \times 45$ respectivamente \cite{gonzalez2010}.}
             \label{fig:erosao}
         \end{center}
@@ -462,7 +464,7 @@ A Equação \ref{eq:bin}, representa a imagem binárizada ($g(x,y)$), onde $f(x,y)$
     Dessa forma, a erosão de $A$ por $B$ é o conjunto de todos os pixels em $z,$ sendo que a reflexão de $B$, transladada por $z$, tenha pelo menos um pixel contido em $A$. Em outras palavras, sendo $A$ e $B$ matrizes, a operação de dilatação é a convolução de $B$ em $A$, onde a dilatação de um pixel $(x,y)$ é o valor máximo dentre seus vizinhos que pertencem ao elemento estruturante $B$, fazendo com que padrões da imagem que não atendam ao padrão imposto pelo elemento estruturante sejam expandidos. A imagem da Figura \ref{fig:dilatacao} mostra um exemplo da operação de dilatação sobre uma imagem contendo um texto em baixa dilatação \cite{gonzalez2010}.
     \begin{figure}[h]
         \begin{center}
-            \includegraphics[width=6cm, height=5cm]{dilatacao.png}
+            \includegraphics[width=6cm, height=5cm]{img/dilatacao.png}
             \caption{Exemplo de dilatação. (a) Imagem original; (b) Elemento estruturante; (c) Dilatação da imagem \textit{a} pelo elemento estruturante em \textit{b}. Observa-se na imagem dilatada e ampliada que falhas na imagem original foram preenchidas \cite{gonzalez2010}.}
             \label{fig:dilatacao}
         \end{center}
@@ -482,7 +484,7 @@ A Equação \ref{eq:bin}, representa a imagem binárizada ($g(x,y)$), onde $f(x,y)$
     Esta operação resulta na suavização de bordas eliminando saliências finas e rompendo istmos, pois pequenas porções de pixels não compatíveis são suavemente diminuídas para se tornarem compatíveis ao padrão do elemento estruturante. Os painéis (b), (c), (d) e (e) da Figura \ref{fig:abrefecha} mostram um exemplo de abertura por meio de suas operações primitivas, erosão seguida de dilatação \cite{gonzalez2010}.
     \begin{figure}[h]
         \begin{center}
-            \includegraphics[width=6cm, height=8cm]{abrefecha.png}
+            \includegraphics[width=6cm, height=8cm]{img/abrefecha.png}
             \caption{Exemplo de abertura e fechamento. (a) Imagem original; (b) e (c) Exemplo de erosão; (d) e (e) Exemplo de abertura; (f) e (g) Exemplo de dilatação; (h) e (i) Exemplo de fechamento. É possível observar os passos das operações de abertura e fechamento e os efeitos produzidos. O elemento estruturante está representado como um círculo com um ponto no centro \cite{gonzalez2010}.}
             \label{fig:abrefecha}
         \end{center}
@@ -521,14 +523,14 @@ A Equação \ref{eq:bin}, representa a imagem binárizada ($g(x,y)$), onde $f(x,y)$
     As Figuras \ref{fig:top} e \ref{fig:black} mostram exemplos da aplicação da transformada \textit{top-hat} e \textit{bottom-hat} respectivamente \cite{gonzalez2010}.
     \begin{figure}[!ht]
         \begin{center}
-            \includegraphics[width=4cm, height=3cm]{top.png}
+            \includegraphics[width=4cm, height=3cm]{img/top.png}
             \caption{Exemplo de transformada \textit{top-hat}. À esquerda, a imagem original e à direita, o resultado da transformada \textit{top-hat} \cite{opencv}}
             \label{fig:top}
         \end{center}
     \end{figure}
     \begin{figure}[!ht]
         \begin{center}
-            \includegraphics[width=4cm, height=3cm]{black.png}
+            \includegraphics[width=4cm, height=3cm]{img/black.png}
             \caption{Exemplo de transformada \textit{bottom-hat}. À esquerda, a imagem original e à direita, o resultado da transformada \textit{bottom-hat} \cite{opencv}}
             \label{fig:black}
         \end{center}
@@ -543,7 +545,7 @@ A Equação \ref{eq:bin}, representa a imagem binárizada ($g(x,y)$), onde $f(x,y)$
 
     \begin{figure}[h]
         \begin{center}
-            \includegraphics[width=0.9\textwidth]{CeB.png}
+            \includegraphics[width=0.9\textwidth]{img/CeB.png}
             \caption{Imagem do Sol em luz visível do instrumento MDI no telescópio SOHO (à esquerda) e o magnetograma (à direita).}
             \label{fig:mm}
         \end{center}
@@ -558,7 +560,7 @@ A Equação \ref{eq:bin}, representa a imagem binárizada ($g(x,y)$), onde $f(x,y)$
     \begin{figure}[!htbp]
         \begin{center}
             \begin{tikzpicture}[node distance=6cm, auto]
-                \input Main.tex
+                \input methodology/Main.tex
             \end{tikzpicture}
             \caption{Fluxo principal de execução.}
             \label{fig:net}
@@ -581,7 +583,7 @@ A Equação \ref{eq:bin}, representa a imagem binárizada ($g(x,y)$), onde $f(x,y)$
 
     \begin{figure}[h]
         \begin{center}
-            \includegraphics[width=0.9\textwidth]{ex_sun.png}
+            \includegraphics[width=0.9\textwidth]{img/ex_sun.png}
             \caption{Área de interesse de uma imagem do disco solar.}
             \label{fig:exsun}
         \end{center}
@@ -589,7 +591,7 @@ A Equação \ref{eq:bin}, representa a imagem binárizada ($g(x,y)$), onde $f(x,y)$
 
     \begin{figure}[h]
         \begin{center}
-            \includegraphics[width=0.9\textwidth]{ex_pro.png}
+            \includegraphics[width=0.9\textwidth]{img/ex_pro.png}
             \caption{Área de interesse de uma imagem processada pelo algoritmo de detecção de manchas solares.}
             \label{fig:blob}
         \end{center}
@@ -598,7 +600,7 @@ A Equação \ref{eq:bin}, representa a imagem binárizada ($g(x,y)$), onde $f(x,y)$
     \begin{figure}[!htbp]
         \begin{center}
             \begin{tikzpicture}[node distance=6cm, auto]
-                \input spotdetection.tex
+                \input methodology/spotdetection.tex
             \end{tikzpicture}
             \caption{Algoritmo de detecção de manchas solares.}
             \label{fig:det}
@@ -619,7 +621,7 @@ A Equação \ref{eq:bin}, representa a imagem binárizada ($g(x,y)$), onde $f(x,y)$
     \begin{figure}[!htbp]
         \begin{center}
             \begin{tikzpicture}[node distance=6cm, auto]
-                \input groupdetection.tex
+                \input methodology/groupdetection.tex
             \end{tikzpicture}
             \caption{Algoritmo de agrupamento de manchas solares.}
             \label{fig:grou}
@@ -690,7 +692,7 @@ O ano de 2009 representa um período com baixa incidência de manchas solares, e o
 \begin{figure}[!htbp]
     \begin{center}
         \begin{tikzpicture}
-            \input 2001_mackxnoaaxsidc.tex
+            \input results/2001_mackxnoaaxsidc.tex
         \end{tikzpicture}
         \caption{Comparação entre os resultados de detecção de manchas solares do ano de 2001.}
         \label{fig:2001}
@@ -700,7 +702,7 @@ O ano de 2009 representa um período com baixa incidência de manchas solares, e o
 \begin{figure}[!htbp]
     \begin{center}
         \begin{tikzpicture}
-            \input 2009_mackxnoaaxsidc.tex
+            \input results/2009_mackxnoaaxsidc.tex
         \end{tikzpicture}
         \caption{Comparação entre os resultados de detecção de manchas solares do ano de 2009.}
         \label{fig:2009}
@@ -774,7 +776,7 @@ O resultado da comparação pode ser observado no gráfico da Figura \ref{fig:2007}
 \begin{figure}[!htbp]
     \begin{center}
         \begin{tikzpicture}
-            \input 2007_filtrosxsidc.tex
+            \input results/2007_filtrosxsidc.tex
         \end{tikzpicture}
         \caption{Comparação entre os resultados de detecção de manchas solares do ano de 2007. Utilizando dois diferentes filtros de manchas por tamanho em pixels.}
         \label{fig:2007}
@@ -822,7 +824,7 @@ O gráfico da Figura \ref{fig:c23} compara o número de Wolf obtido para cada dia 
 \begin{figure}[!htbp]
     \begin{center}
         \begin{tikzpicture}
-            \input ciclo23.tex
+            \input results/ciclo23.tex
         \end{tikzpicture}
         \caption{Comparação diária entre os resultados de detecção de manchas solares para o ciclo solar 23.}
         \label{fig:c23}
@@ -834,7 +836,7 @@ A evolução temporal dos parâmetros físicos das manchas como área, contraste e ca
 \begin{figure}[!htbp]
     \begin{center}
         \begin{tikzpicture}
-            \input ciclo23_area.tex
+            \input results/ciclo23_area.tex
         \end{tikzpicture}
         \caption{Evolução da área de manchas solares ao longo do ciclo solar 23.}
         \label{fig:c23a}
@@ -843,7 +845,7 @@ A evolução temporal dos parâmetros físicos das manchas como área, contraste e ca
 \begin{figure}[!htbp]
     \begin{center}
         \begin{tikzpicture}
-            \input ciclo23_contraste.tex
+            \input results/ciclo23_contraste.tex
         \end{tikzpicture}
         \caption{Contraste de manchas solares ao longo do ciclo solar 23.}
         \label{fig:c23c}
@@ -852,7 +854,7 @@ A evolução temporal dos parâmetros físicos das manchas como área, contraste e ca
 \begin{figure}[!htbp]
     \begin{center}
         \begin{tikzpicture}
-            \input ciclo23_bmax.tex
+            \input results/ciclo23_bmax.tex
         \end{tikzpicture}
         \caption{Campos magéticos máximos e mínimos de manchas solares ao longo do ciclo solar 23.}
         \label{fig:c23b}
@@ -869,7 +871,7 @@ A Figura \ref{fig:hcontrastegeral} mostra o histograma do contraste das manchas 
 \begin{figure}[!h]
     \begin{center}
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input hist_contraste_geral.tex
+            \input results/hist_contraste_geral.tex
         \end{tikzpicture}
         \caption{Gráfico do histograma de contraste das manchas solares para todo o ciclo solar 23.}
         \label{fig:hcontrastegeral}
@@ -880,7 +882,7 @@ A Figura \ref{fig:hcontrastegeral} mostra o histograma do contraste das manchas 
     \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
         \centering
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input hist_contraste_p1.tex
+            \input results/hist_contraste_p1.tex
         \end{tikzpicture}
         \caption{Período A}
         \label{fig:B}
@@ -888,7 +890,7 @@ A Figura \ref{fig:hcontrastegeral} mostra o histograma do contraste das manchas 
     \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
         \centering
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input hist_contraste_p2.tex
+            \input results/hist_contraste_p2.tex
         \end{tikzpicture}
         \caption{Período B}
         \label{fig:B}
@@ -896,7 +898,7 @@ A Figura \ref{fig:hcontrastegeral} mostra o histograma do contraste das manchas 
     \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
         \centering
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input hist_contraste_p3.tex
+            \input results/hist_contraste_p3.tex
         \end{tikzpicture}
         \caption{Período C}
         \label{fig:B}
@@ -904,7 +906,7 @@ A Figura \ref{fig:hcontrastegeral} mostra o histograma do contraste das manchas 
     \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
         \centering
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input hist_contraste_p4.tex
+            \input results/hist_contraste_p4.tex
         \end{tikzpicture}
         \caption{Período D}
         \label{fig:B}
@@ -931,7 +933,7 @@ A Figura \ref{fig:htempgeral} mostra o histograma da temperatura das manchas par
 \begin{figure}[!h]
     \begin{center}
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input hist_temp_geral.tex
+            \input results/hist_temp_geral.tex
         \end{tikzpicture}
         \caption{Gráfico do histograma da temperatura das manchas solares.}
         \label{fig:htempgeral}
@@ -945,7 +947,7 @@ Assim como no histograma do contraste, a distribuição de temperatura das manchas
     \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
         \centering
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input hist_temp_p1.tex
+            \input results/hist_temp_p1.tex
         \end{tikzpicture}
         \caption{Período A}
         \label{fig:B}
@@ -953,7 +955,7 @@ Assim como no histograma do contraste, a distribuição de temperatura das manchas
     \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
         \centering
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input hist_temp_p2.tex
+            \input results/hist_temp_p2.tex
         \end{tikzpicture}
         \caption{Período B}
         \label{fig:B}
@@ -961,7 +963,7 @@ Assim como no histograma do contraste, a distribuição de temperatura das manchas
     \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
         \centering
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input hist_temp_p3.tex
+            \input results/hist_temp_p3.tex
         \end{tikzpicture}
         \caption{Período C}
         \label{fig:B}
@@ -969,7 +971,7 @@ Assim como no histograma do contraste, a distribuição de temperatura das manchas
     \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
         \centering
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input hist_temp_p4.tex
+            \input results/hist_temp_p4.tex
         \end{tikzpicture}
         \caption{Período D}
         \label{fig:B}
@@ -998,7 +1000,7 @@ Como pode-se observar as áreas das manchas solares variam de um fator de 100, se
 \begin{figure}[h]
     \begin{center}
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input hist_area_geral.tex
+            \input results/hist_area_geral.tex
         \end{tikzpicture}
         \caption{Gráfico do histograma de área das manchas solares.}
         \label{fig:hareageral}
@@ -1009,7 +1011,7 @@ Como pode-se observar as áreas das manchas solares variam de um fator de 100, se
     \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
         \centering
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input hist_area_p1.tex
+            \input results/hist_area_p1.tex
         \end{tikzpicture}
         \caption{Período A}
         \label{fig:B}
@@ -1017,7 +1019,7 @@ Como pode-se observar as áreas das manchas solares variam de um fator de 100, se
     \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
         \centering
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input hist_area_p2.tex
+            \input results/hist_area_p2.tex
         \end{tikzpicture}
         \caption{Período B}
         \label{fig:B}
@@ -1025,7 +1027,7 @@ Como pode-se observar as áreas das manchas solares variam de um fator de 100, se
     \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
         \centering
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input hist_area_p3.tex
+            \input results/hist_area_p3.tex
         \end{tikzpicture}
         \caption{Período C}
         \label{fig:B}
@@ -1033,7 +1035,7 @@ Como pode-se observar as áreas das manchas solares variam de um fator de 100, se
     \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
         \centering
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input hist_area_p4.tex
+            \input results/hist_area_p4.tex
         \end{tikzpicture}
         \caption{Período D}
         \label{fig:B}
@@ -1047,7 +1049,7 @@ A Figura \ref{fig:hbmaxabsgeral} mostra o histograma do campo magnético máximo d
 \begin{figure}[!h]
     \begin{center}
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input hist_bmaxabs_geral.tex
+            \input results/hist_bmaxabs_geral.tex
         \end{tikzpicture}
         \caption{Gráfico do histograma de campo magnético extremo das manchas solares.}
         \label{fig:hbmaxabsgeral}
@@ -1059,7 +1061,7 @@ A Figura \ref{fig:hbmaxabsgeral} mostra o histograma do campo magnético máximo d
     \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
         \centering
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input hist_bmaxabs_p1.tex
+            \input results/hist_bmaxabs_p1.tex
         \end{tikzpicture}
         \caption{Período A}
         \label{fig:B}
@@ -1067,7 +1069,7 @@ A Figura \ref{fig:hbmaxabsgeral} mostra o histograma do campo magnético máximo d
     \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
         \centering
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input hist_bmaxabs_p2.tex
+            \input results/hist_bmaxabs_p2.tex
         \end{tikzpicture}
         \caption{Período B}
         \label{fig:B}
@@ -1075,7 +1077,7 @@ A Figura \ref{fig:hbmaxabsgeral} mostra o histograma do campo magnético máximo d
     \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
         \centering
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input hist_bmaxabs_p3.tex
+            \input results/hist_bmaxabs_p3.tex
         \end{tikzpicture}
         \caption{Período C}
         \label{fig:B}
@@ -1083,7 +1085,7 @@ A Figura \ref{fig:hbmaxabsgeral} mostra o histograma do campo magnético máximo d
     \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
         \centering
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input hist_bmaxabs_p4.tex
+            \input results/hist_bmaxabs_p4.tex
         \end{tikzpicture}
         \caption{Período D}
         \label{fig:B}
@@ -1113,7 +1115,7 @@ O gráfico de correlação da Figura \ref{fig:tempxarea1} entre temperatura e área 
 \begin{figure}[!h]
     \begin{center}
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input tempxarea1.tex
+            \input results/tempxarea1.tex
         \end{tikzpicture}
         \caption{Gráfico da temperatura das manchas solares pela área das manchas solares.}
         \label{fig:tempxarea1}
@@ -1122,7 +1124,7 @@ O gráfico de correlação da Figura \ref{fig:tempxarea1} entre temperatura e área 
 \begin{figure}[!htp]
     \begin{center}
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input areaxint1.tex
+            \input results/areaxint1.tex
         \end{tikzpicture}
         \caption{Gráfico do brilho relativo das manchas solares pela área da mancha solar.}
         \label{fig:areaxint1}
@@ -1143,7 +1145,7 @@ Nota-se que as manchas solares ajustadas por \citecustom{dicke1970} eram mais fr
 \begin{figure}[!h]
     \begin{center}
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input bmaxabsxtemp.tex
+            \input results/bmaxabsxtemp.tex
         \end{tikzpicture}
         \caption{Gráfico do campo magnético máximo pela temperatura das manchas solares.}
         \label{fig:bxtemp}
@@ -1155,7 +1157,7 @@ O gráfico de correlação entre área e campo magnético extremo pode ser observado 
 \begin{figure}[!h]
     \begin{center}
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input bmaxabsxarea.tex
+            \input results/bmaxabsxarea.tex
         \end{tikzpicture}
         \caption{Gráfico do campo magnético extremo pela área das manchas solares.}
         \label{fig:bxarea}
@@ -1170,7 +1172,7 @@ A Figura \ref{fig:areaxcontraste} compara os gráficos de contraste pela área das
     \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
         \centering
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input areaxcontraste_p1.tex
+            \input results/areaxcontraste_p1.tex
         \end{tikzpicture}
         \caption{Período A}
         \label{fig:B}
@@ -1178,7 +1180,7 @@ A Figura \ref{fig:areaxcontraste} compara os gráficos de contraste pela área das
     \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
         \centering
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input areaxcontraste_p2.tex
+            \input results/areaxcontraste_p2.tex
         \end{tikzpicture}
         \caption{Período B}
         \label{fig:B}
@@ -1186,7 +1188,7 @@ A Figura \ref{fig:areaxcontraste} compara os gráficos de contraste pela área das
     \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
         \centering
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input areaxcontraste_p3.tex
+            \input results/areaxcontraste_p3.tex
         \end{tikzpicture}
         \caption{Período C}
         \label{fig:B}
@@ -1194,7 +1196,7 @@ A Figura \ref{fig:areaxcontraste} compara os gráficos de contraste pela área das
     \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
         \centering
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input areaxcontraste_p4.tex
+            \input results/areaxcontraste_p4.tex
         \end{tikzpicture}
         \caption{Período D}
         \label{fig:B}
@@ -1221,7 +1223,7 @@ A Figura \ref{fig:areaxcontraste} compara os gráficos de contraste pela área das
     \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
         \centering
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input areaxtemperatura_p1.tex
+            \input results/areaxtemperatura_p1.tex
         \end{tikzpicture}
         \caption{Período A}
         \label{fig:B}
@@ -1229,7 +1231,7 @@ A Figura \ref{fig:areaxcontraste} compara os gráficos de contraste pela área das
     \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
         \centering
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input areaxtemperatura_p2.tex
+            \input results/areaxtemperatura_p2.tex
         \end{tikzpicture}
         \caption{Período B}
         \label{fig:B}
@@ -1237,7 +1239,7 @@ A Figura \ref{fig:areaxcontraste} compara os gráficos de contraste pela área das
     \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
         \centering
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input areaxtemperatura_p3.tex
+            \input results/areaxtemperatura_p3.tex
         \end{tikzpicture}
         \caption{Período C}
         \label{fig:B}
@@ -1245,7 +1247,7 @@ A Figura \ref{fig:areaxcontraste} compara os gráficos de contraste pela área das
     \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
         \centering
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input areaxtemperatura_p4.tex
+            \input results/areaxtemperatura_p4.tex
         \end{tikzpicture}
         \caption{Período D}
         \label{fig:B}
@@ -1274,7 +1276,7 @@ A Figura \ref{fig:bxcontraste_c} apresenta as correlações do campo magnético ext
     \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
         \centering
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input bmaxabsxcontraste_p1.tex
+            \input results/bmaxabsxcontraste_p1.tex
         \end{tikzpicture}
         \caption{Período A}
         \label{fig:B}
@@ -1282,7 +1284,7 @@ A Figura \ref{fig:bxcontraste_c} apresenta as correlações do campo magnético ext
     \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
         \centering
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input bmaxabsxcontraste_p2.tex
+            \input results/bmaxabsxcontraste_p2.tex
         \end{tikzpicture}
         \caption{Período B}
         \label{fig:B}
@@ -1290,7 +1292,7 @@ A Figura \ref{fig:bxcontraste_c} apresenta as correlações do campo magnético ext
     \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
         \centering
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input bmaxabsxcontraste_p3.tex
+            \input results/bmaxabsxcontraste_p3.tex
         \end{tikzpicture}
         \caption{Período C}
         \label{fig:B}
@@ -1298,7 +1300,7 @@ A Figura \ref{fig:bxcontraste_c} apresenta as correlações do campo magnético ext
     \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
         \centering
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input bmaxabsxcontraste_p4.tex
+            \input results/bmaxabsxcontraste_p4.tex
         \end{tikzpicture}
         \caption{Período D}
         \label{fig:B}
@@ -1325,7 +1327,7 @@ A Figura \ref{fig:bxcontraste_c} apresenta as correlações do campo magnético ext
     \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
         \centering
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input bmaxabsxtemperatura_p1.tex
+            \input results/bmaxabsxtemperatura_p1.tex
         \end{tikzpicture}
         \caption{Período A}
         \label{fig:B}
@@ -1333,7 +1335,7 @@ A Figura \ref{fig:bxcontraste_c} apresenta as correlações do campo magnético ext
     \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
         \centering
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input bmaxabsxtemperatura_p2.tex
+            \input results/bmaxabsxtemperatura_p2.tex
         \end{tikzpicture}
         \caption{Período B}
         \label{fig:B}
@@ -1341,7 +1343,7 @@ A Figura \ref{fig:bxcontraste_c} apresenta as correlações do campo magnético ext
     \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
         \centering
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input bmaxabsxtemperatura_p3.tex
+            \input results/bmaxabsxtemperatura_p3.tex
         \end{tikzpicture}
         \caption{Período C}
         \label{fig:B}
@@ -1349,7 +1351,7 @@ A Figura \ref{fig:bxcontraste_c} apresenta as correlações do campo magnético ext
     \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
         \centering
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input bmaxabsxtemperatura_p4.tex
+            \input results/bmaxabsxtemperatura_p4.tex
         \end{tikzpicture}
         \caption{Período D}
         \label{fig:B}
@@ -1378,7 +1380,7 @@ A Figura \ref{fig:bxarea_c} apresenta os gráficos do log da área em função do ca
     \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
         \centering
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input bmaxabsxarea_p1.tex
+            \input results/bmaxabsxarea_p1.tex
         \end{tikzpicture}
         \caption{Período A}
         \label{fig:B}
@@ -1386,7 +1388,7 @@ A Figura \ref{fig:bxarea_c} apresenta os gráficos do log da área em função do ca
     \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
         \centering
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input bmaxabsxarea_p2.tex
+            \input results/bmaxabsxarea_p2.tex
         \end{tikzpicture}
         \caption{Período B}
         \label{fig:B}
@@ -1394,7 +1396,7 @@ A Figura \ref{fig:bxarea_c} apresenta os gráficos do log da área em função do ca
     \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
         \centering
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input bmaxabsxarea_p3.tex
+            \input results/bmaxabsxarea_p3.tex
         \end{tikzpicture}
         \caption{Período C}
         \label{fig:B}
@@ -1402,7 +1404,7 @@ A Figura \ref{fig:bxarea_c} apresenta os gráficos do log da área em função do ca
     \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
         \centering
         \begin{tikzpicture}[node distance=6cm, auto]
-            \input bmaxabsxarea_p4.tex
+            \input results/bmaxabsxarea_p4.tex
         \end{tikzpicture}
         \caption{Período D}
         \label{fig:B}

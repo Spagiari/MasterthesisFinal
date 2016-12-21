@@ -1,4 +1,4 @@
-TEX = pdflatex -shell-escape -interaction nonstopmode
+TEX = pdflatex -synctex=1  -shell-escape -interaction=nonstopmode
 BIB = bibtex
 GS = gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite
 
@@ -18,6 +18,7 @@ spell::
 
 clean::
 	rm -fv *.aux *.log *.bbl *.blg *.toc *.out *.lot *.lof $(PAPER).pdf $(PAPPER)*.md5 $(PAPPER)*.dpth  $(PAPPER)*.pdf $(BUNDLE)
+	rm tikz/*.*
 
 $(PAPER).pdf: $(PAPER).tex $(BIBFILE)
 	$(TEX) $(PAPER)
