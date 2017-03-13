@@ -3,7 +3,7 @@
     \node [block, below of=init] (se_ini) {ESS = 3};
     \node [block, below of=se_ini] (se_inc) {ESS = ESS + 2};
     \node [block, right of=se_ini] (im_ori) {Imagem Original};
-    \node [block, below of=im_ori] (at_blk) {Transf BLACK-HAT};
+    \node [block, below of=im_ori] (at_blk) {Transf BOTTOM-HAT};
     \node [block, right of=at_blk] (ts_ini) {BT = 0};
     \node [block, below of=ts_ini] (im_bin) {Binarizar imagem ponto de corte igual a BT};
     \node [decision, below of=im_bin, node distance=5.5cm] (bl_chk) {Novos pixels pretos $>$ MA ?};
